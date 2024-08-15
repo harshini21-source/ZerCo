@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playhall Booking</title>
+    <style>
+        /* Example styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#EAF6F6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin: 100px 0px 50px;
+        }
+        select, input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #dadee3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Playhall Booking</h2>
+        <form id="playhallBookingForm">
+            <label for="playhall">Select Playhall:</label>
+            <select id="playhall" name="playhall" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="See-Saw">See-Saw</option>
+                <option value="Mini Chess">Mini-chess</option>
+                <option value="Laser Tag">Laser Tag</option>
+                <option value="Ball Pit">Ball Pit</option>
+                <option value="Craft Station">Craft Station</option>
+                <option value="Dress-Up Corner">Dress-Up Corner</option>
+                <option value="Mini Golf">Mini Golf</option>
+                <option value="Mini Basketball Court">Mini Basketball Court</option>
+            </select>
+            <br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br>
+            <button type="button" onclick="getout()">Book Playhall</button>
+        </form>
+    </div>
+    <script>
+        function getout() {
+            // Get form elements
+            const form = document.getElementById('playhallBookingForm');
+            const playhall = document.getElementById('playhall');
+            const date = document.getElementById('date');
+
+            // Validate form
+            if (playhall.value === "" || !date.value) {
+                alert("Please select all required fields.");
+                return; // Stop further execution if validation fails
+            }
+
+            // Confirm booking
+            const confirmBooking = confirm("Are you sure you want to book?");
+            if (confirmBooking) {
+                alert("Successfully booked");
+                window.location.href="payment.html";
+            } else {
+                alert("Booking cancelled");
+            }
+        }
+    </script>
+</body>
+</html>
+

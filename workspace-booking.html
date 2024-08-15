@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#EAF6F6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+        select,
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Workspace Booking</h2>
+        <form id="workspaceBookingForm" onsubmit="return getout()">
+            <label for="workspace">Select Workspace:</label>
+            <select id="workspace" name="workspace" required>
+                <option value="innovators-nook">Innovator's Nook</option>
+                <option value="idea-hub">Idea Hub</option>
+                <option value="design-den">Design Den</option>
+                <option value="creative-loft">Creative Loft</option>
+                <option value="inspiration-suite">Inspiration Suite</option>
+                <option value="executive-suite">Executive Suite</option>
+                <option value="focus-room">Focus Room</option>
+                <option value="solo-study">Solo Study</option>
+                <option value="leadership-lounge">Leadership Lounge</option>
+                <option value="private-pod">Private Pod</option>
+                <option value="team-tactics-room">Team Tactics Room</option>
+                <option value="collaboration-corner">Collaboration Corner</option>
+                <option value="synergy-suite">Synergy Suite</option>
+                <option value="brainstorm-booth">Brainstorm Booth</option>
+                <option value="strategy-station">Strategy Station</option>
+                <option value="conference-chamber">Conference Chamber</option>
+                <option value="strategy-suite">Strategy Suite</option>
+                <option value="visionary-hall">Visionary Hall</option>
+                <option value="meeting-matrix">Meeting Matrix</option>
+                <option value="networking-nest">Networking Nest</option>
+                <option value="hot-desk-haven">Hot Desk Haven</option>
+                <option value="flexi-desk-area">FlexiDesk Area</option>
+                <option value="agile-work-zone">Agile Work Zone</option>
+                <option value="dynamic-desk">Dynamic Desk</option>
+                <option value="workspace-workshop">Workspace Workshop</option>
+                <option value="event-arena">Event Arena</option>
+                <option value="breakaway-bay">Breakaway Bay</option>
+                <option value="recharge-room">Recharge Room</option>
+                <option value="zen-zone">Zen Zone</option>
+                <option value="chill-chamber">Chill Chamber</option>
+                <option value="virtual-vista">Virtual Vista</option>
+                <option value="remote-collaboration-hub">Remote Collaboration Hub</option>
+                <option value="digital-meeting-room">Digital Meeting Room</option>
+                <option value="webinar-workspace">Webinar Workspace</option>
+            </select>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <button type="submit">Book Workspace</button>
+        </form>
+    </div>
+    <script>
+        function getout() {
+            // Get form elements
+            const workspace = document.getElementById('workspace');
+            const date = document.getElementById('date');
+
+            // Validate form
+            if (workspace.value === "" || !date.value) {
+                alert("Please select all required fields.");
+                return false; // Stop form submission if validation fails
+            }
+
+            // Confirm booking
+            const confirmBooking = confirm("Are you sure you want to book?");
+            if (confirmBooking) {
+                alert("Successfully booked");
+                window.location.href = "payment.html";
+                return false; // Stop form submission
+            } else {
+                alert("Booking cancelled");
+                return false; // Stop form submission
+            }
+        }
+    </script>
+</body>
+</html>
+
