@@ -3,33 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Zerco </title>
+    <title>Welcome to Zerco</title>
     <style>
-        *{
-                  margin: 0;
+        * {
+            margin: 0;
             padding: 0;
         }
         body {
             font-family: Arial, sans-serif;
-            background-color:#EAF6F6;
+            background-color: #EAF6F6;
             text-align: center;
             color: #333;
         }
-        
+        nav {
+            background-color: #f8f9fa;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        nav img {
+            height: 80px;
+            width: 80px;
+        }
         h1 {
             color: #007bff;
             font-size: 36px;
-            margin-bottom: 20px;
-            margin-left:200px;
-            padding-top:20px;
+            margin: 0;
         }
-        p {
-            font-size: 18px;
+        nav a {
+            margin-left: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        hr {
             margin: 20px 0;
+        }
+        .intro {
+            padding: 50px 20px;
+        }
+        .intro h2 {
+            color: #28a745;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .intro p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
         }
         .founders {
             margin-top: 50px;
             font-size: 16px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .founders h2 {
             color: #28a745;
@@ -39,28 +73,30 @@
             font-size: 18px;
             color: #555;
         }
-       .founders{
-        padding: 10px;
-        flex-direction: column-reverse;
-       }
     </style>
 </head>
 <body>
-    <nav style="background-colour:bisque; height:100px;width:100%;">
-        <div style=" display:flex;">
-        <img  style="padding-top:5px;" src="zerco.jpg" height="80px" width="80px">
-             <h1>Welcome to Zerco </h1>
-             <a href="signup.html">SIGNUP HERE!!</a><br><br>
-        <a href="login.html">LOGIN HERE!!</a>
+    <nav>
+        <img src="zerco.jpg" alt="Zerco Logo">
+        <h1>Welcome to Zerco</h1>
+        <div>
+            <a href="signup.html">SIGNUP HERE!!</a>
+            <a href="login.html">LOGIN HERE!!</a>
         </div>
-        <hr><hr>
     </nav>
-        <div class="founders"style="padding-top:500px;">
-            <h2>Founders</h2>
-            <p>Harshini Reddy-FOUNDER</p>
-            <p>Deekshitha-CO FOUNDER</p>
-        </div>
-       
-
+    <hr>
+    
+    <div class="intro">
+        <h2>About Zerco</h2>
+        <p>Zerco is your go-to platform for seamless workspace and children's playhall bookings.</p>
+        <p>Whether you need a quiet place to work or a fun, safe environment for your children to play, Zerco has you covered!</p>
+        <p>Experience convenience and comfort with our easy-to-use booking system designed for busy professionals and families alike.</p>
+    </div>
+    
+    <div class="founders">
+        <h2>Founders</h2>
+        <p>Harshini Reddy - FOUNDER</p>
+        <p>Deekshitha - CO-FOUNDER</p>
+    </div>
 </body>
 </html>
